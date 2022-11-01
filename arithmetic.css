@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.form {
+  align-content: center;
+  border: rgb(150, 146, 146) 1px solid;
+  border-radius: 5px;
+  margin: auto;
+  height: 400px;
+  width: 40%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  text-align: left;
+  padding-bottom: 50px;
+  padding-left: 15px;
+  color: black;
+}
+.header h2 {
+  font-size: 50px;
+}
+.Box1 {
+  width: 20px;
+  padding: 10px;
+  margin: auto;
+  height: 5px;
+}
+.boxes {
+  text-align: center;
+  padding-bottom: 50px;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-left: 5px;
+  padding-bottom: 20px;
+}
+button {
+  align-items: center;
+  padding: 4px;
+  background-color: rgb(233, 35, 35);
+  text-align: center;
+  border-radius: 3px;
+  margin-left: 15px;
+}
+input {
+  height: 30px;
+  text-align: center;
+}
+.output {
+  text-align: left;
+  font-size: 25px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: black;
+  padding-left: 20px;
+}

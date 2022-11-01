@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit Coverter</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        background-color: rgb(212, 229, 245);
+        height: 515px;
+        text-align: center;
+        margin: auto;
+        width: 510px;
+        padding-top: 15px;
+      }
+      .insideContainer {
+        background-color: white;
+        height: 490px;
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 3px;
+        width: 490px;
+      }
+      .heading {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .headingContainer {
+        padding-top: 10px;
+        padding-bottom: 25px;
+      }
+      .allContent h4 {
+        padding-bottom: 25px;
+      }
+      .allContent P {
+        font-style: italic;
+        color: rgb(102, 98, 98);
+        font-size: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+      input {
+        padding-top: 5px;
+        padding-bottom: 3px;
+        padding-left: 3px;
+        padding-right: 50px;
+        align-items: left;
+      }
+      #from label {
+        font-size: 25px;
+        text-align: left;
+        padding-top: 10px;
+      }
+      #to label {
+        font-size: 25px;
+        text-align: left;
+        padding-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="insideContainer">
+        <div class="headingContainer">
+          <div class="heading">Metric Unit Converter</div>
+        </div>
+
+        <form>
+          <div class="allContent">
+            <div class="sentence">value to convert:</div>
+            <p>a real number or scientifc notation</p>
+            <input type="number" id="display" placeholder="Enter your value" />
+            <div id="from">
+              <label for="unit1">From:</label>
+              <select name="from" id="frm">
+                <option value="kilog">Kilograms</option>
+                <option value="lbs">Pound</option>
+                <option value="mtr">Metre</option>
+                <option value="inch">Inch</option>
+                <option value="ft">Feet</option>
+                <option value="ltr">Litre</option>
+                <option value="gllns">Gallons</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="unit2">To:</label>
+              <select name="to" id="tt">
+                <option value="kilog">Kilograms</option>
+                <option value="lbs">Pound</option>
+                <option value="mtr">Metre</option>
+                <option value="inch">Inch</option>
+                <option value="ft">Feet</option>
+                <option value="ltr">Litre</option>
+                <option value="gllns">Gallons</option>
+              </select>
+              <div>
+                <button id="clear">Clear</button>
+                <button id="calc">Calculate</button>
+              </div>
+            </div>
+            <textarea id="ans">Answer:</textarea>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      let input = document.getElementById("display");
+      let from = document.getElementById("frm");
+      let to = document.getElementById("tt");
+      let clearButton = document.getElementById("clear");
+      let calcButton = document.getElementById("calc");
+      let textarea = document.getElementById("ans");
+
+      clearButton.addEventListener("click", function (event) {
+        event.preventDefault();
+      });
+
+      calcButton.addEventListener("click", function (calc) {
+        calc.preventDefault();
+        if (frm.value == "kilog" && tt.value == "lbs") {
+          let result = display.value * 2.20462;
+          textarea.textContent = result;
+          calc.preventDefault();
+        } else if (frm.value == "lbs" && tt.value == "kilog") {
+          let result = display.value * 0.453592;
+          textarea.textContent = result;
+          calc.preventDefault();
+        } else if (frm.value == "ltr" && tt.value == "gllns") {
+          let result = display.value / 3.785;
+          textarea.textContent = result;
+          calc.preventDefault();
+        } else if (frm.value == "gllns" && tt.value == "ltr") {
+          let result = display.value * 3.785;
+          textarea.textContent = result;
+          calc.preventDefault();
+        } else if (frm.value == "mtr" && tt.value == "inch") {
+          let result = display.value * 39.3701;
+          textarea.textContent = result;
+          calc.preventDefault();
+        } else if (frm.value == "inch" && tt.value == "mtr") {
+          let result = display.value / 39.3701;
+          textarea.textContent = result;
+          calc.preventDefault();
+        } else if (frm.value == "mtr" && tt.value == "ft") {
+          let result = display.value * 3.281;
+          textarea.textContent = result;
+          calc.preventDefault();
+        } else if (frm.value == "ft" && tt.value == "mtr") {
+          let result = display.value / 3.281;
+          textarea.textContent = result;
+          calc.preventDefault();
+        } else if (frm.value == "inch" && tt.value == "ft") {
+          let result = display.value / 12;
+          textarea.textContent = result;
+          calc.preventDefault();
+        } else if (frm.value == "ft" && tt.value == "inch") {
+          let result = display.value * 12;
+          textarea.textContent = result;
+          calc.preventDefault();
+        } else {
+          textarea.textContent = "ERROR!? INVALID UNITS.";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div class="controls">
+        <div id="exit">ICON</div>
+      </div>
+      <div class="display"></div>
+      <div class="buttons">
+        <div class="firstrow">
+          <button>modulus</button>
+          <button id="deleteall">AC</button>
+          <button id="deletepre">C</button>
+          <button id="deletesingle">ICON</button>
+        </div>
+        <div>
+          <button>divide</button>
+          <button>multiply</button>
+          <button>subtract</button>
+          <button>addition</button>
+          <button>equals</button>
+        </div>
+        <div>
+          <button>point</button>
+          <button>0</button>
+          <button id="1">1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      let oneButton = document.getElementById("1");
+
+      let result = document.getElementById("result");
+
+      oneButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        result.textContent = oneButton.value;
+      });
+
+      //let addButton = document.getElementById("add");
+      // let subtractButton = document.getElementById("subtract");
+      //  let multiplyButton = document.getElementById("multiply");
+      //  let divideButton = document.getElementById("divide");
+    </script>
+  </body>
+</html>
+
+querySelector

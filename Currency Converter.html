@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit Currency</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .background {
+        text-align: center;
+        height: 400px;
+        width: 35%;
+        margin: auto;
+        background-color: rgb(80, 110, 245);
+        padding-top: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      .secondBackground {
+        background-color: white;
+        height: 370px;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+      body h2 {
+        padding-top: 5px;
+        text-align: center;
+        font-size: 30px;
+        padding-bottom: 5px;
+      }
+      .amountContainer {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        margin-left: 20px;
+        padding-bottom: 20px;
+        font-size: 15px;
+        font-family: monospace;
+      }
+      .amountContainer label {
+        text-align: left;
+        padding-bottom: 5px;
+      }
+      .amountContainer input {
+        width: 200px;
+      }
+
+      .result {
+        border: 1px solid black;
+        height: 30px;
+        width: 60px;
+        text-align: center;
+      }
+      .resultContainer {
+        display: flex;
+        padding-top: 50px;
+        padding-bottom: 40px;
+        margin: auto;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .fromNto {
+        display: flex;
+        margin-left: 20px;
+        align-items: center;
+        padding-bottom: 15px;
+      }
+
+      .fromContainer {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .toContainer {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="heading"><h2>Currency Converter</h2></div>
+    <div class="background">
+      <div class="secondBackground">
+        <div class="container">
+          <form>
+            <div>
+              <div class="resultContainer">
+                <label>results</label>
+                <div id="result"></div>
+              </div>
+              <div class="amountContainer">
+                <label>amount to convert:</label>
+                <input type="number" id="amount" placeholder="Enter amount" />
+              </div>
+              <div class="fromNto">
+                <div class="fromContainer">
+                  <label for="from">from:</label>
+                  <select name="currencyFrom" id="from">
+                    <option value="gmd">GMD</option>
+                    <option value="euro">Euro</option>
+                    <option value="usd">USD</option>
+                    <option value="cfa">CFA</option>
+                    <option value="gbp">GBP</option>
+                  </select>
+                </div>
+
+                <div class="toContainer">
+                  <label for="to">to:</label>
+                  <select name="currencyTo" id="to">
+                    <option value="gmd">GMD</option>
+                    <option value="euro">Euro</option>
+                    <option value="usd">USD</option>
+                    <option value="cfa">CFA</option>
+                    <option value="gbp">GBP</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <button id="convert">Convert</button>
+              <button id="clear">Clear</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      let gmdStandard = {
+        gmd: 1,
+        usd: 0.019,
+        gbp: 0.014,
+        euro: 0.016,
+        cfa: 10.83,
+      };
+      let amountInput = document.getElementById("amount");
+      let fromSelect = document.querySelector("#from");
+      let toSelect = document.querySelector("#to");
+      let resultSelect = document.querySelector("#result");
+
+      let clearButton = document.getElementById("clear");
+      let convertButton = document.getElementById("convert");
+
+      convertButton.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        let from = fromSelect.value;
+        let to = toSelect.value;
+        let convertAmount = 0;
+
+        switch (from) {
+          case "usd":
+            convertAmount = amountInput.value / gmdStandard.usd;
+            break;
+          case "gbp":
+            convertAmount = amountInput.value / gmdStandard.gbp;
+            break;
+          case "euro":
+            convertAmount = amountInput.value / gmdStandard.euro;
+            break;
+          case "cfa":
+            convertAmount = amountInput.value / gmdStandard.cfa;
+            break;
+          default:
+            convertAmount = amountInput.value;
+            break;
+            let convertAmount = result;
+        }
+        event.preventDefault();
+
+        switch (to) {
+          case "usd":
+            convertAmount = amountInput.value / gmdStandard.usd;
+            break;
+          case "gbp":
+            convertAmount = amountInput.value / gmdStandard.gbp;
+            break;
+          case "euro":
+            convertAmount = amountInput.value / gmdStandard.euro;
+            break;
+          case "cfa":
+            convertAmount = amountInput.value / gmdStandard.cfa;
+
+            break;
+          default:
+            convertAmount = amountInput.value;
+            break;
+        }
+        event.preventDefault();
+      });
+
+      clearButton.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        amountInput.value = "";
+        result.textContent = 0;
+        event.preventDefault();
+      });
+    </script>
+  </body>
+</html>

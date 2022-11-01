@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arithmetic Calculator</title>
+  <link rel="stylesheet" href="arithmetic.css" />
+</head>
+
+<body>
+  <div class="header">
+    <h2>Calculator</h2>
+    <p>Calculate all your mathematical problems here.</p>
+  </div>
+
+  <div class="form">
+
+    <input type="number" id="secondnumber" placeholder="Please enter second value" />
+    <div class="buttons">
+      <button id="erase">AC</button>
+      <button id="delete">C</button>
+      <button>%</button>
+      <button>/</button>
+      <button>*</button>
+      <button>-<button>
+          <button>+</button>
+          <button id="equal">=</button>
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>0</button>
+          <button>.</button>
+    </div>
+  </div>
+
+  <script>
+
+    let erase = document.querySelector("AC")
+    let equals = document.querySelector("equal")
+    let inputElement = document.querySelector("#secondnumber");
+    let del = document.querySelector("C")
+    let output = document.querySelector("output")
+    let buttonContainer = document.querySelector(".buttons");
+
+    buttonContainer.addEventListener("click", function (e) {
+      e.preventDefault();
+    });
+    if (e.target.tagName == "DIV") {
+      (targetElement.className == "AC")
+      //do an action> inputElement.value = ""
+    } else if (targetElement.className == "C") {
+      // do an action> inputElement.value = inputElement.value.slice(0,-1);
+    } else if (targetElement.class == "equal") {
+      let results = eval(inputElement.value);
+      inputElement.value = results;
+    } else {
+      inputElement.value += targetElement.textContent;
+    }
+
+      //math.eval how to handle errors
+  </script>
+</body>
+
+</html>
